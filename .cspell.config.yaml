@@ -176,6 +176,7 @@ words:
   - "hoge"
   # renovate.json
   - "aazw"
+  - "githubaction"
   - "githubactions"
   # Taskfile.yml
   - "TASKFILE"

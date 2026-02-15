@@ -2,7 +2,7 @@
   // ${localWorkspaceFolderBasename} はgit worktreeを同階層同列運用する場合に操作中の対象の識別ができない問題に対応するためのもの
   "name": "vsc-project-template-${localWorkspaceFolderBasename}-${devcontainerId}",
   // base image
-  "image": "aazw/devcontainers-devbox-base:12",
+  "image": "aazw/devcontainers-devbox-base:13",
   // single-language images
   // "image": "aazw/devcontainers-devbox-python:6",
   // "image": "aazw/devcontainers-devbox-go:9",

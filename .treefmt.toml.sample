@@ -1,0 +1,57 @@
+# [formatter.xml]
+# command = "bash"
+# options = [
+#   "-c",
+#   'for f in "$@"; do xmllint --format "$f" --output "$f"; done',
+#   "--",
+# ]
+# includes = ["*.xml"]
+# excludes = []
+
+# [formatter.ruff]
+# command = "uv"
+# options = ["run", "ruff", "format"]
+# includes = ["*.py"]
+# excludes = []
+
+# [formatter.go]
+# command = "gofmt"
+# options = ["-w"]
+# includes = ["*.go"]
+# excludes = []
+
+# [formatter.biome]
+# command = "bunx"
+# options = ["@biomejs/biome", "format", "--write"]
+# includes = ["*.js", "*.jsx", "*.ts", "*.tsx", "*.css", "*.html"]
+# excludes = []
+
+# [formatter.sqruff]
+# command = "sqruff"
+# options = ["fix"]
+# includes = ["*.sql"]
+# excludes = []
+
+# [formatter.tombi]
+# command = "tombi"
+# options = ["format"]
+# includes = ["*.toml"]
+# excludes = []
+
+# [formatter.terraform]
+# command = "terraform"
+# options = ["fmt"]
+# includes = ["*.tf"]
+# excludes = []
+
+# [formatter.jsonschema_renovate_json]
+# command = "bash"
+# options = [
+#   "-lc",
+#   "node tools/merge_devbox/jsonc2json.js renovate.json | check-jsonschema --builtin-schema vendor.renovate -"
+# ]
+# includes = [
+#   # renovate
+#   "renovate.json"
+# ]
+# excludes = []

@@ -1,0 +1,164 @@
+walk = "git"
+excludes = [
+  # DevContainerのVolumeMountによるキャッシュ
+  ".devcontainer/.state/*",
+  # 各イメージ検証中に作られうるシステムファイル・ディレクトリ
+  "*/.git/*",
+  "*/.devbox",
+  # vale で取得したstyleファイル等
+  ".vale/*"
+]
+
+[formatter.dockerfile_dockerfmt]
+command = "dockerfmt"
+options = ["-n", "-w"]
+includes = ["**/Dockerfile"]
+excludes = []
+
+[formatter.dockerfile_hadolint]
+command = "hadolint"
+options = []
+includes = ["**/Dockerfile"]
+excludes = []
+
+[formatter.githubactions_actionlint]
+command = "actionlint"
+options = []
+includes = [".github/workflows/*"]
+excludes = []
+
+[formatter.githubactions_zizmor]
+command = "zizmor"
+options = []
+includes = [".github/workflows/*"]
+excludes = []
+
+[formatter.json_prettier]
+command = "prettier"
+options = ["-w"]
+includes = ["*.json"]
+excludes = []
+
+[formatter.jsonschema_githubactions]
+command = "check-jsonschema"
+options = ["--builtin-schema", "vendor.github-workflows"]
+includes = [
+  # github actions
+  ".github/workflows/*"
+]
+excludes = []
+
+[formatter.jsonschema_taskfile_yml]
+command = "check-jsonschema"
+options = ["--builtin-schema", "vendor.taskfile"]
+includes = [
+  # taskfile
+  "Taskfile.yml"
+]
+excludes = []
+
+[formatter.markdown_lychee]
+command = "lychee"
+options = ["--config", ".lychee.toml"]
+includes = ["*.md"]
+excludes = []
+
+[formatter.markdown_markdownlint-cli2]
+command = "markdownlint-cli2"
+options = ["--fix"]
+includes = ["*.md"]
+excludes = []
+
+[formatter.markdown_vale]
+command = "vale"
+options = []
+includes = ["*.md"]
+excludes = []
+
+[formatter.security_osv-scanner]
+command = "osv-scanner"
+options = ["scan", "source", "--lockfile"]
+includes = [
+  #
+  "**/go.sum",
+  "**/Cargo.lock",
+  "**/package-lock.json",
+  "**/pnpm-lock.yaml",
+  "**/yarn.lock",
+  "**/bun.lock"
+]
+excludes = []
+
+[formatter.security_trivy]
+command = "bash"
+options = ["-lc", "trivy fs --config trivy.yaml ."]
+includes = ["trivy.yaml"] # trivy.yaml を見つけたときに1回だけ実行する. 全体実行は引数で固定
+excludes = []
+
+[formatter.security_trufflehog]
+command = "trufflehog"
+options = ["filesystem"]
+includes = ["*"]
+excludes = ["*/devbox.lock"]
+
+[formatter.shellscript_shellcheck]
+command = "shellcheck"
+options = []
+includes = ["*.sh"]
+excludes = []
+
+[formatter.shellscript_shfmt]
+command = "shfmt"
+options = ["-w"]
+includes = ["*.sh"]
+excludes = []
+
+[formatter.text_cspell]
+command = "cspell"
+options = ["lint", "--no-cache", "--verbose", "--no-must-find-files"]
+includes = ["*"]
+excludes = [
+  # typos側で例外処理しているものが引っかかる(可能性がある)ので外す
+  ".typos.toml",
+  # 既定で対象外にするため、これを通すとファイル数0で、exit 1になるため除外
+  "**/package-lock.json"
+]
+
+[formatter.text_editorconfig-checker]
+command = "editorconfig-checker"
+options = []
+includes = ["**/*"]
+excludes = []
+
+[formatter.text_typos]
+command = "typos"
+options = []
+includes = ["*"]
+excludes = [
+  # cspell側で辞書登録しているものが引っかかるので外す
+  ".cspell.config.yaml"
+]
+
+[formatter.toml_taplo]
+command = "taplo"
+options = ["fmt"]
+includes = ["*.toml"]
+excludes = []
+
+[formatter.toml_toml-sort]
+command = "toml-sort"
+options = ["--in-place"]
+includes = [".treefmt.toml"]
+excludes = []
+
+[formatter.yaml_yamlfmt]
+command = "yamlfmt"
+options = []
+includes = ["*.yaml", "*.yml", ".yamlfmt", ".yamllint"]
+excludes = []
+
+[formatter.yaml_yamllint]
+command = "yamllint"
+options = []
+includes = ["*.yaml", "*.yml", ".yamlfmt", ".yamllint"]
+excludes = []

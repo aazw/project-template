@@ -17,9 +17,7 @@
     // devbox
     "**/.devbox": true,
     // devcontainer caches
-    "**/.devcontainer/.state/**": true,
-    // node
-    "**/node_modules/**": true
+    "**/.devcontainer/.state/**": true
   },
   // VSCodeのエクスプローラーが重くなる対策 その3
   "search.exclude": {
@@ -28,15 +26,23 @@
     // devbox
     "**/.devbox/**": true,
     // devcontainer caches
-    "**/.devcontainer/.state/**": true,
-    // node
-    "**/node_modules/**": true
+    "**/.devcontainer/.state/**": true
   },
   // 拡張子との関連付け
   "files.associations": {
     "devbox.json": "jsonc",
     "devbox.lock": "jsonc",
-    ".yamlfmt": "yaml"
+    ".dockerignore": "ignore",
+    ".editorconfig": "ini",
+    ".gitattributes": "properties",
+    ".gitignore": "ignore",
+    ".prettierignore": "ignore",
+    ".shellcheckrc": "properties",
+    ".sqruff": "ini",
+    ".treefmt.toml.sample": "toml",
+    ".trivyignore": "ignore",
+    ".yamlfmt": "yaml",
+    ".yamllint": "yaml"
   },
   // 折り返し無効化
   "editor.wordWrap": "off",
@@ -53,7 +59,7 @@
       {
         // treefmt側でフォーマッタを選択する
         "match": ".*",
-        "cmd": "treefmt \"${file}\""
+        "cmd": "treefmt -vv \"${file}\""
       }
     ]
   }

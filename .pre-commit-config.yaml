@@ -18,6 +18,15 @@ repos:
 
   - repo: local
     hooks:
+      - id: gitleaks
+        name: gitleaks (staged diff)
+        entry: gitleaks git --pre-commit --redact --no-banner --no-color -v
+        language: system
+        pass_filenames: false
+        always_run: true
+
+  - repo: local
+    hooks:
       - id: commitlint
         name: commitlint
         entry: commitlint --edit

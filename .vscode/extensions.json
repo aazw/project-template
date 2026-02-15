@@ -4,7 +4,12 @@
     "ms-azuretools.vscode-containers",
     "ms-azuretools.vscode-docker",
     "tamasfe.even-better-toml",
+    // Coding Agent
     "anthropic.claude-code",
-    "openai.chatgpt"
+    "openai.chatgpt",
+    // DevBox
+    "jetpack-io.devbox",
+    // Mermaid
+    "mermaidchart.vscode-mermaid-chart"
   ]
 }

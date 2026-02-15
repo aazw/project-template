@@ -1,7 +1,7 @@
 {
   // ${localWorkspaceFolderBasename} はgit worktreeを同階層同列運用する場合に操作中の対象の識別ができない問題に対応するためのもの
-  "name": "vsc-base-${localWorkspaceFolderBasename}-${devcontainerId}",
   "image": "aazw/devcontainers-devbox-base:9",
+  "name": "vsc-project-template-${localWorkspaceFolderBasename}-${devcontainerId}",
   // single-language images
   // "image": "aazw/devcontainers-devbox-python:6",
   // "image": "aazw/devcontainers-devbox-go:9",
@@ -75,7 +75,7 @@
   },
   "runArgs": [
     "--name",
-    "vsc-base-${localWorkspaceFolderBasename}-${devcontainerId}",
+    "vsc-project-template-${localWorkspaceFolderBasename}-${devcontainerId}",
     "--add-host",
     "host.docker.internal:host-gateway"
   ],

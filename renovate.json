@@ -16,12 +16,18 @@
       "minimumReleaseAge": null
     },
     {
+      // devcontainer関連を一つにまとめる
       "matchFileNames": [".devcontainer/**"],
       "groupName": "devcontainer"
     },
     {
+      // githubaction関連を一つにまとめる
       "matchFileNames": [".github/workflows/*.yaml"],
       "groupName": "githubactions"
+    },
+    {
+      // major と non-major を同一PRに入れる
+      "separateMajorMinor": false
     }
   ]
 }

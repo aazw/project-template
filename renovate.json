@@ -27,6 +27,7 @@
     },
     {
       // major と non-major を同一PRに入れる
+      "matchManagers": ["devbox"],
       "separateMajorMinor": false
     }
   ]

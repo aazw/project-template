@@ -9,12 +9,13 @@ language: en
 
 # ノイズ源を除外
 ignorePaths:
-  - "**/node_modules/**"
+  - "**/.git/**"
   - "**/.devbox/**"
   - "**/.devcontainer/.state/**"
   - "**/*.svg"
   - "**/*.drawio"
   - ".typos.toml"
+  - "**/node_modules/**"
 
 # 単語登録（少量なら)
 words:

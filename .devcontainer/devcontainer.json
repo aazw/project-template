@@ -69,7 +69,9 @@
   "remoteEnv": {
     "LOCAL_WORKSPACE_FOLDER": "${localWorkspaceFolder}",
     "TZ": "Asia/Tokyo",
-    "TASK_X_ENV_PRECEDENCE": "1"
+    "TASK_X_ENV_PRECEDENCE": "1",
+    // codex の device code 認証を無効化する場合に利用する
+    "DISPLAY": "nothing"
   },
   "runArgs": [
     "--name",
